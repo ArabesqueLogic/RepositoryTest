@@ -1,0 +1,39 @@
+<h1>Welcome to My Page</h1>
+<p>This is where I share my thoughts.</p>
+<ul>
+  <li>About Me</li>
+  <li>Projects</li>
+  <li>Contact</li>
+</ul>
+
+<style>
+
+h1 {
+  color: rgb(18, 17, 83);
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+  color: #444;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: rgb(18, 17, 83);
+  border-radius: 90px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+</style>
+
+<div style="width: 300px; height: 200px; background-color: rgb(18, 17, 83); border-radius: 25px;"></div>

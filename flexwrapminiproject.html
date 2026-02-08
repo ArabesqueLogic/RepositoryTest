@@ -1,0 +1,124 @@
+<nav class="navbar">
+    <h1 class="navbar__logo">FES</h1>
+    <div class="navbar__links">
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+<section class="gallery">
+        <div class="card">
+            <img src="https://www.thespruceeats.com/thmb/4Uxr_CKC7aR-UhEicIvVqLaiO0k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-488636063-5ab2dbd8a8ff48049cfd36e8ad841ae5.jpg" alt="Card 1">
+            <h2>Project One</h2>
+            <p>Clean and minmal layout.</p>
+            <button class="button">View Project</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT8gPTxpkBn-05ja0K6cFQ8n-z1cUqN18asA&s" alt="Card 2">
+            <h2>Project Two</h2>
+            <p>Flexible and responsive design.</p>
+            <button class="button">View Project</button>
+        </div>
+        <div class="card">
+            <img src="https://domf5oio6qrcr.cloudfront.net/medialibrary/7909/conversions/b8a1309a-ba53-48c7-bca3-9c36aab2338a-thumb.jpg" alt="Card 3">
+            <h2>Project Three</h2>
+            <p>Built using Flexbox principles.</p>
+            <button class="button">View Project</button>
+        </div>
+</section>
+<style>
+    body{
+        background-color: rgb(29, 13, 44);
+    }
+    .navbar{
+        border: solid black;
+        background-color: rgb(81, 24, 88);
+        border-radius: 20px;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+        padding: 20px 40px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar__logo{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .navbar__links {
+        display: flex;
+        gap: 25px;
+    }
+
+.navbar__links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.navbar__links a:hover{
+    text-decoration: underline;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    background-color: rgb(81, 24, 88);
+    padding: 20px 50px;
+    border: solid;
+    border-radius: 20px;
+    margin-top: 20px;
+
+}
+
+.card {
+    background-color: rgb(81, 24, 88);
+    border-color: rgb(0, 0, 0);
+    border: solid black;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card img{
+    width: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: solid;
+}
+
+.button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid rgb(145, 83, 145);
+    
+}
+img:active{
+    border: solid black;
+}
+.button:hover{
+    transform: scale(1.1);
+}
+.button:active{
+    background-color: rgb(87, 14, 68);
+}
+.button:focus{
+    border:2px solid rgb(0, 0, 0);
+}
+
+</style>
+
+
