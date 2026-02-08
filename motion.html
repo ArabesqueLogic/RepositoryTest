@@ -1,0 +1,22 @@
+<div class="box">
+    <p>Hello motion</p>
+</div>
+<style>
+    @keyframes slideGrow {
+        from{transform: translateX(-700px) scale(0.9);
+
+        }
+        to{transform: translateX(0) scale(1);
+
+        }
+    }
+    .box{
+        width: 200px;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        animation: slideGrow 600ms ease-in-out;
+        animation-delay: 600ms;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>

@@ -1,0 +1,31 @@
+<div class="card">
+  <img src="https://m.media-amazon.com/images/I/61yMAsvoVSL._AC_UY1100_.jpg" alt="Product">
+  <div class="overlay">SALE</div>
+</div>
+<style>
+    .card{
+        position: relative;
+        width: 250;
+        height: 150px;
+        overflow: auto;
+    }
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(220, 20, 60, 0.9);
+        color: white;
+        padding: 10px;
+        z-index: 10;
+    }
+    .overlay:focus{
+        border: 2px solid rgb(0, 0, 0);
+    }
+    img{
+        width: 130;
+        height: 200;
+    }
+    img:focus{
+        border: 2px solid blue;
+    }
+</style>
