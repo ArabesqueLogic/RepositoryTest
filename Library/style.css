@@ -20,6 +20,8 @@ img {
     max-height: 50vh;
 }
 
+
+
 .nav__container {
     width: 100%;
     max-width: 1200px ;
@@ -33,8 +35,20 @@ ul {
     display: flex;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 p {
     line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 li {
@@ -70,6 +84,67 @@ li {
     color: #7342d6;
 }
 
+.btn__menu {
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #7342d6;
+    display: none;
+}
+
+.menu--open .menu__backdrop {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu--open {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: all 300ms ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.btn__menu--close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: white;
+}
+
+.btn__menu--links { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.btn__menu--link {
+    padding: 32px 0;
+}
+
+.menu__link {
+    font-size: 40px;
+    color: white;
+
+}
+
+/* Landing*/
+
 #landing {
  background-color: rgba(115, 66, 214, 0.1);
 }
@@ -102,8 +177,9 @@ h2 {
     margin-bottom: 32px;
 }
 button{ 
-    
+    opacity: 1;
     cursor: pointer;
+
 }
 .btn {
     background-color: #7342d6;
@@ -112,11 +188,18 @@ button{
     font-size: 20px;
     border-radius: 4px;
     border: none;
+    cursor: pointer;
+    transition: all 100ms;
+    opacity: 1;
     
 }
 
+.btn:hover {
+   transform: opacity 0.75;
+}
+
 button:active {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .header__description {
@@ -128,6 +211,7 @@ button:active {
 
 .header__img--wrapper {
     padding: 20px;
+    z-index: 2;
 }
 
 .container {
@@ -175,9 +259,9 @@ body {
     bottom: 1px;
 }
 
-.highlight__img--wrapper {
+.highlight__img{
     padding: 20px;
-    z-index: 2;
+    z-index: 0;
 }
 
 .highlight__wrapper {
@@ -189,8 +273,8 @@ body {
     width: calc(100% / 3);
     display: flex; 
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .highlight__para {
@@ -215,7 +299,7 @@ body {
     margin-bottom: 16px;
 }
 
-#features{
+#featured{
     padding-top: 8vw;
     background-color: rgba(115, 66, 214, 0.1);
 }
@@ -268,3 +352,118 @@ body {
     padding-right: 6px;
     color: #bfbfbf;
 }
+
+.explore {
+    background-color:rgba(115, 66, 214, 0.1);
+
+}
+
+.explore .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #242424;
+
+}
+
+.footer__logo--img {
+    width: 160px;
+    filter:grayscale(1) invert(1);
+}
+
+.footer__logo {
+    display: flex;
+}
+
+
+
+.row__column {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.footer__link, 
+.footer__copyright {
+    color: white;
+    text-decoration: none;
+}
+
+.footer__links {
+    width: 100%;
+    max-width:400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 24px 0;
+}
+
+
+
+/* RESPONSIVE*/
+
+@media (max-width:768px){
+     .header__description {
+        padding: 0 24px;
+     }
+
+     h1 {
+        font-size: 26px;
+     }
+
+     h2 {
+        font-size: 26px;
+     }
+
+     button {
+        font-size: 18px;
+     }
+
+     .book {
+        width: 50%;
+        text-align: center;
+        padding: 20px 0;
+     }
+
+     .book__img {
+        max-width: 200px;
+        width: 100%;
+        
+     }
+
+     .book__img--wrapper {
+        justify-content: center;
+        padding: 20px 0px;
+     }
+}
+
+@media (max-width:550px){
+    .nav__links {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+
+    .highlight {
+        width: 100%;
+
+    }
+
+    .highlight__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+
+.highlight:not(:last-child) {
+    margin-bottom: 24px; 
+}
+}
+
