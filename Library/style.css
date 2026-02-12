@@ -329,7 +329,7 @@ body {
 
 .book__img {
     transition: all 300ms;
-    max-height: 300px;
+    max-height: 410px;
     cursor: no-drop;
 }
 
@@ -364,6 +364,13 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.book__title,
+.book__ratings,
+.book__pricing {
+    text-align: center;
+}
+
 
 /* FOOTER */
 
@@ -464,6 +471,17 @@ align-items: center;
 
 .highlight:not(:last-child) {
     margin-bottom: 24px; 
+}
+.book__img  {
+    padding: 0 12px;   
+}
+.book__title {
+    font-size: 16x;
+    padding: 0 8px;
+}
+.book__img--wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 }
 
