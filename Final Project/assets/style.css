@@ -8,6 +8,10 @@
   color: #243e63;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -31,6 +35,7 @@ h3 {
 
 a {
   text-decoration: none;
+  transition: all 300ms ease;
 }
 
 ul {
@@ -40,14 +45,19 @@ ul {
 li {
   list-style: none;
   align-items: center;
+  cursor: pointer;
 }
 
 button {
   cursor: pointer;
 }
 
+p {
+  color: #243e6398;
+}
+
 i {
-  filter: invert(1);
+  color: white;
 }
 
 .row {
@@ -119,8 +129,47 @@ NAV BAR
   padding: 10px 24px;
   background-color: #6415ff;
   color: white;
-
+  transition: all 300ms ease;
   border-radius: 20px;
+}
+
+.sign-up__link:hover {
+  transform: scale(1.05);
+  opacity: 0.86;
+  text-decoration: none;
+}
+
+.nav__link,
+.log-in__link {
+  position: relative;
+  width: max-content;
+}
+
+.nav__link:after,
+.log-in__link:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #243e63;
+  transition: 0.2s ease;
+  transform: scaleX(0);
+}
+
+.nav__link:hover:after,
+.log-in__link:hover:after {
+  transform: scaleX(1);
+}
+
+.sign-up__link:active {
+  opacity: 1;
+}
+
+.nav__link:active,
+.log-in__link:active {
+  opacity: 0.75;
 }
 
 /*
@@ -137,7 +186,7 @@ HEADER
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .header__title--wrapper {
@@ -164,32 +213,19 @@ HEADER
 }
 
 .header__email--box {
-  display: flex;
-
   padding: 20px 0px;
+  align-items: center;
+  display: flex;
+  width: 100%;
 }
 
 .email__bar {
-  position: absolute;
   width: 100%;
-  box-sizing: content-box;
-  max-width: 400px;
   border-radius: 40px;
   border: solid #243e632d;
-  z-index: 0;
-  font-size: 26px;
-  padding: 8px 0;
-}
-
-.header__btn {
-  position: relative;
-  z-index: 1;
-  background-color: #6415ff;
-  border: none;
-  border-radius: 40px;
-  padding: 20px 36px;
-  color: white;
-  right: 830px;
+  padding: 16px;
+  font-size: 24px;
+  width: 100%;
 }
 
 .customer__titles {
@@ -294,6 +330,7 @@ QUALITY
 
 .quality__wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .quality__header {
@@ -325,6 +362,7 @@ QUALITY
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 36px;
+  transition: all 0.3s;
 }
 
 .quality__title {
@@ -335,6 +373,15 @@ QUALITY
   align-items: start;
   display: flex;
   padding: 0px 0px;
+}
+
+.learn-more__btn:hover {
+  opacity: 0.86;
+  transform: scale(1.03);
+}
+
+.learn-more__btn:active {
+  opacity: 1;
 }
 
 /*
@@ -435,14 +482,16 @@ PRICING
   padding: 56px 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .pricing__plans {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .pricing__plan--card-1,
@@ -451,38 +500,35 @@ PRICING
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  width: 240px;
   height: 100%;
-  height: 500px;
-  width: 100%;
-  max-width: 280px;
   border: solid #17191b0c 2px;
   padding: 0;
   border-radius: 4px;
   align-items: center;
+  z-index: 2;
+  width: 100%;
 }
 
-.pricing__plan--cards {
-  display: flex;
-  width: calc(100% / 3);
-  align-items: center;
-  justify-content: center;
+.pricing__plan--btn {
+  transition: all 300ms ease;
+  z-index: 0;
 }
 
 .plan__description {
   height: 100%;
-  max-height: 250px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   border-top: solid #17191b0c 2px;
-  border-bottom: solid #17191b0c 2px;
 }
 
 .plan__description h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .pricing__plan {
@@ -500,6 +546,8 @@ PRICING
 
 .plan__title {
   padding-bottom: 50px;
+  width: 100%;
+  border-top: solid 4px;
 }
 
 .pricing__header {
@@ -508,15 +556,9 @@ PRICING
   align-items: center;
 }
 
-.plan__pricing {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-}
-
 .plan__title h4 {
   padding-bottom: 40px;
+  padding-top: 20px;
 }
 
 .plan__btn {
@@ -527,24 +569,44 @@ PRICING
 .plan__pricing {
   font-size: 30px;
   font-weight: 700;
+  color: black;
 }
 
 .monthly {
   font-size: 10px;
   color: #243e63b4;
   font-weight: 700;
+  padding-top: 10px;
 }
 
 .plan__description--list {
   height: 100%;
-  max-height: 200px;
+  border-bottom: solid #17191b0c 2px;
   justify-content: space-evenly;
+  padding: 20px 0px;
+}
+
+.pricing__plan--card-1 .plan__title {
+  border-color: #4df7cd;
+}
+
+.pricing__plan--card-2 .plan__title {
+  border-color: #007bff;
+}
+
+.pricing__plan--card-3 .plan__title {
+  border-color: #fc466b;
+}
+
+.plan__btn--wrapper {
+  padding: 24px 0;
 }
 
 .plan__item {
   font-size: 14px;
   color: #243e6385;
   font-weight: bold;
+  padding: 16px 0;
 }
 
 .plan__btn-1,
@@ -553,9 +615,10 @@ PRICING
   padding: 10px 30px;
   border: none;
   border-radius: 20px;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 10px;
   font-weight: bold;
+  transition: all 300ms ease;
 }
 
 .plan__btn-1 {
@@ -567,6 +630,7 @@ PRICING
     rgba(77, 247, 205, 0.82) 50%,
     rgba(77, 247, 205, 0.7) 100%
   );
+  z-index: 4;
 }
 
 .plan__btn-2 {
@@ -582,25 +646,108 @@ PRICING
 }
 
 .plan__btn-3 {
-  background: #ff6363;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 99, 99, 1) 0%,
-    rgba(255, 99, 99, 0.7) 50%,
-    rgba(255, 99, 99, 0.81) 100%
+  background: #fc466b;
+  background: radial-gradient(
+    circle,
+    rgba(252, 70, 107, 1) 0%,
+    rgba(245, 115, 139, 0.76) 100%
   );
 }
 
-.pricing__plan--card-1 {
-  border-top: solid 7px #4df7cd;
+.plan__btn-1:hover,
+.plan__btn-2:hover,
+.plan__btn-3:hover {
+  transform: scale(1.06);
 }
 
-.pricing__plan--card-2 {
-  border-top: solid 7px #007bff;
+.pricing__cards {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.pricing__plan--card-3 {
-  border-top: solid 7px #ff6363;
+.pricing__plan--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
+}
+
+.pricing__plan--card-1:hover .plan__btn-1 {
+  background: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0.76) 100%
+  );
+  color: #4df7cd;
+}
+
+.pricing__plan--card-2:hover .plan__btn-2 {
+  background: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0.76) 100%
+  );
+  color: #007bff;
+}
+
+.pricing__plan--card-3:hover .plan__btn-3 {
+  background: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0.76) 100%
+  );
+  color: #fc466b;
+}
+
+.pricing__plan--card:hover h4 {
+  color: white;
+}
+
+.pricing__plan--card:hover .monthly {
+  color: white;
+}
+
+.pricing__plan--card:hover .plan__pricing {
+  color: white;
+}
+
+.pricing__plan--card:hover .plan__item {
+  color: white;
+}
+
+.pricing__plan--card-1:hover {
+  background-color: #76e0c4;
+  cursor: pointer;
+}
+
+.pricing__plan--card-1:active {
+  transform: scale(1.03);
+}
+
+.pricing__plan--card-1:hover,
+.pricing__plan--card-2:hover,
+.pricing__plan--card-3:hover {
+  transition: all 300ms ease;
+}
+
+.pricing__plan--card-2:hover {
+  background: #6bb3ff;
+}
+
+.pricing__plan--card-2:active {
+  transform: scale(1.03);
+}
+
+.pricing__plan--card-3:hover {
+  background-color: #fc466b;
+}
+
+.pricing__plan--card-3:active {
+  transform: scale(1.03);
 }
 
 /*
@@ -627,30 +774,46 @@ FOOTER
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 0 0 0;
+  padding: 80px 8px 0 8px;
 }
 
 .footer__links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   color: white;
   flex-wrap: wrap;
   width: 100%;
-  padding-bottom: 60px;
+  padding: 0 8px 60px 8px;
   border-bottom: solid 2px #ffffff42;
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  width: calc(100% / 5);
   align-items: start;
 }
 
 .link {
   padding: 10px 0;
   font-size: 13px;
+  transition: all 300ms ease;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 7px;
+  left: 0;
+  background-color: #ffffff;
+  transition: 0.2s ease;
+  transform: scaleX(0);
+}
+.link:hover:after {
+  transform: scaleX(1);
 }
 
 .links h5,
@@ -669,4 +832,19 @@ FOOTER
   display: flex;
   width: 100px;
   justify-content: space-between;
+}
+
+i:hover {
+  opacity: 0.86;
+}
+
+.footer__container a {
+  color: white;
+}
+
+.link:hover {
+  opacity: 0.76;
+}
+
+@media (max-width: 960) {
 }
