@@ -8,6 +8,7 @@
     <title>Radi Hamoudeh</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/04e3aa4f17.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -18,8 +19,20 @@
                     <div class="logo__wrapper">
                         <img src="logo.2c489fc453a1783cbadacf914efa3df6.svg" alt="" class="logo">
                         <h2 class="logo__sub-title">Treact</h2>
+                        <button class="btn__menu" onclick="openMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="btn__menu--svg">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
                     </div>
                     <ul class="all__links">
+                        <button class="btn__menu--close" onclick="closeMenu()">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </button>
                         <ul class="nav__links">
                             <li class="nav__list"><a href="#" class="nav__link">About
                                 </a></li>
@@ -35,9 +48,19 @@
                             <li class="nav__list"><a href="#" class="sign-up__link">Sign Up</a></li>
                         </ul>
                     </ul>
+                    <div class="menu__backdrop">
+                    <ul class="menu__backdrop--links">
+                        <li class="backdrop__links"><a href="#">About</a></li>
+                        <li class="backdrop__links"><a href="#">Blog</a></li>
+                        <li class="backdrop__links"><a href="#">Pricing</a></li>
+                        <li class="backdrop__links"><a href="#">Contact Us</a></li>
+                        <li class="backdrop__links"><a href="#">Login</a></li>
+                        <li class="sing-up__backdrop"><a href="#">Sign Up</a></li>
+                    </ul>
                 </div>
+                </div>
+                </nav>
         </div>
-        </nav>
         </div>
         <header>
             <div class="container">
@@ -47,8 +70,12 @@
                         <p class="header__sub-title">Our templates are easy to setup, undersatnd and customize.
                             Fullymodular components with a variety of pages and components.</p>
                         <div class="header__email--box">
-                            <input class="email__bar" type="email">
-
+                            <form action="email">
+                                <div class="email__wrapper">
+                            <input class="email__bar" type="email" placeholder="Your E-mail Address">
+                            <button type="submit" class="inside__btn">Get Started</button>
+                            </div>
+                            </form>
                         </div>
                         <div class="customers">
                             <div class="customer__title">
@@ -335,7 +362,7 @@
                         <img class="footer__img" src="logo-light.d9a5d1b5be5ea077b26864fdfc2e96a4.svg" alt="">
                         <h2 class="footer__text">Treact Inc.</h2>
                     </div>
-                    <p class="">&copy; 2026 Treact Inc. All Right Reserved</p>
+                    <p class="copyright">&copy; 2026 Treact Inc. All Right Reserved</p>
                     <div class="footer__socials">
                         <ul class="socials__list">
                             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>

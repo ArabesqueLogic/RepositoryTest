@@ -1,0 +1,32 @@
+<div class="input-wrapper">
+  <input type="text" placeholder="Enter text..." class="input-field" />
+  <button type="submit" class="inside-button">Go</button>
+</div>
+
+<style>
+  .input-wrapper {
+    position: relative; /* Establishes positioning context for the button */
+    display: inline-flex; /* Aligns items nicely */
+    /* Add a border here to make the whole thing look like one field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden; /* Ensures button stays within rounded corners */
+  }
+
+  .input-field {
+    padding-right: 40px; /* Adjust padding to prevent text from going under the button */
+    border: none; /* Remove individual border if wrapper has one */
+    /* Other styling */
+  }
+
+  .inside-button {
+    position: absolute; /* Positions the button relative to the wrapper */
+    right: 0; /* Aligns to the right */
+    top: 0;
+    bottom: 0;
+    /* Optional: Add height/width or padding to fit nicely */
+    padding: 0 10px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
