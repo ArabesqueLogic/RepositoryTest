@@ -489,7 +489,7 @@ PRICING
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   flex-wrap: wrap;
   margin: 0 auto;
 }
@@ -669,8 +669,8 @@ PRICING
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
-  max-width: 250px;
+  width: calc(100% / 3);
+  padding: 0 20px;
 }
 
 .pricing__plan--card-1:hover .plan__btn-1 {
